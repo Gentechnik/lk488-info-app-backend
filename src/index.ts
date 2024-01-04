@@ -1,17 +1,14 @@
 import express from "express";
+import * as config from "./config";
 
 const app = express();
 
-const getPort = (): number => {
-  return 4899;
-};
-
 app.get("/", (_req, res) => {
   res.json({
-    appName: "et488-info-app-backend",
+    appName: config.getAppName(),
   });
 });
 
-app.listen(getPort(), () => {
-  console.log(`listening at http://localhost:${getPort()}`);
+app.listen(config.getPort(), () => {
+  console.log(`listening at http://localhost:${config.getPort()}`);
 });

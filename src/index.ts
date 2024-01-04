@@ -6,7 +6,7 @@ const getPort = (): number => {
   return 4899;
 };
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.json({
     appName: "et488-info-app-backend",
   });
